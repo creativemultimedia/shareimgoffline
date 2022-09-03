@@ -27,16 +27,15 @@ class _SecondState extends State<Second> {
     FutureBuilder(future: view_data(),builder: (context, snapshot) {
       if(snapshot.connectionState==ConnectionState.done)
         {
-           if(snapshot.hasData)
-             {
-               List<Map>? test=[];
-               test=snapshot.data as List<Map>?;
-               test!.forEach((element) { 
-                 name.add(element['name']);
-                 contact.add(element['contact']);
-                 img.add(element['image']);
-               });
-             }
+           if(snapshot.hasData) {
+             List<Map>? test = [];
+             test = snapshot.data as List<Map>?;
+             test!.forEach((element) {
+               name.add(element['name']);
+               contact.add(element['contact']);
+               img.add(element['image']);
+             });
+           }
            return ListView.builder(itemCount: name.length,itemBuilder: (context, index) {
              return ListTile(title: Text(name[index]),subtitle: Text(contact[index]),
              leading: Image.file(img[index])
