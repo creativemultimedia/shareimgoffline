@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'dropdowndemo.dart';
 
 void main() {
   runApp(MaterialApp(
